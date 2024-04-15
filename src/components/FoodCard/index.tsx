@@ -7,9 +7,14 @@ import { IProduct } from "@/lib/features/product/productSlice";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "@/lib/store";
 import { addToCart } from "@/lib/features/cart/cartSlice";
+import { toast } from "react-toastify";
 
 function FoodCard({ product }: { product: IProduct }) {
   const dispatch = useDispatch<AppDispatch>();
+  const handleAddToCart = () => {
+    dispatch(addToCart(product));
+    toast.success("Add to cart successfully");
+  };
 
   return (
     <Card sx={{ maxWidth: 345 }} className="px-2">
@@ -36,7 +41,9 @@ function FoodCard({ product }: { product: IProduct }) {
         <Button
           size="small"
           className=" text-lg bg-green-500 hover:bg-green-600 text-white"
-          onClick={() => dispatch(addToCart(product))}
+          onClick={() => {
+            handleAddToCart();
+          }}
         >
           Add cart
         </Button>
