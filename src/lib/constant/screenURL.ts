@@ -4,16 +4,16 @@ const screenURl = [
     title: "home",
   },
   {
-    url: "/category",
-    title: "category",
-  },
-  {
     url: "/product",
     title: "product",
   },
   {
     url: "/blog",
     title: "blog",
+  },
+  {
+    url: "/about",
+    title: "about",
   },
 ];
 

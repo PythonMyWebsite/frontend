@@ -4,14 +4,14 @@ import { poppins } from "@/styles/font";
 
 export default function Nav() {
   return (
-    <div className="w-full d-flex justify-center p-4 bg-white shadow-slate-400 shadow-sm">
+    <div className="w-full flex justify-center px-52 py-7 bg-white drop-shadow-xl">
       <ul className="d-flex gap-8 w-auto flex-1 justify-center">
         {screenURl.map((screen, index) => {
           return (
             <li key={index}>
               <Link
                 href={screen.url}
-                className={`${poppins.className} capitalize hover:text-blue-300`}
+                className={`capitalize hover:text-blue-300`}
               >
                 {screen.title}
               </Link>
