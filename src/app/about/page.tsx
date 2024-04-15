@@ -29,7 +29,7 @@ const introducelist = [
   },
 ];
 
-function About(props) {
+function About() {
   useTitle("About");
 
   return (
@@ -52,8 +52,8 @@ function About(props) {
                 sản phẩm tươi ngon nhất từ trang trại đến tay người tiêu dùng.
               </p>
               <p className="text-gray-500 mt-3">
-                Hãy đến với "About The Carrot" để trải nghiệm sự tươi mới và
-                nguồn dinh dưỡng tự nhiên từ những sản phẩm của chúng tôi.
+                Hãy đến với chung toi để trải nghiệm sự tươi mới và nguồn dinh
+                dưỡng tự nhiên từ những sản phẩm của chúng tôi.
               </p>
             </div>
             <div className="flex gap-2 bg-gray-300 rounded-lg py-10 drop-shadow-lg">

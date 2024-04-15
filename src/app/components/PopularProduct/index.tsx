@@ -2,14 +2,13 @@ import ProductBanner from "../../../../public/product-banner.png";
 import Image from "next/image";
 import { Button } from "@mui/material";
 import FoodCard from "@/components/FoodCard";
-import { RootState, AppDispatch, AppStore } from "@/lib/store";
+import { RootState, AppDispatch } from "@/lib/store";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, CSSProperties, useState } from "react";
 import {
   getAllProduct,
   getAllCategory,
 } from "@/lib/features/product/productSlice";
-import ProductFillter from "@/app/product/components/ProductFillter";
 import MoonLoader from "react-spinners/MoonLoader";
 
 const override: CSSProperties = {

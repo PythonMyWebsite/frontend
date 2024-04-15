@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@/lib/store";
 
 function ProductTable() {
-  const dispatch = useDispatch<AppDispatch>();
   const cart = useSelector((state: RootState) => state.cart.cart);
 
   return (
