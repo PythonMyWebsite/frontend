@@ -5,7 +5,11 @@ import Image from "next/image";
 import { Button } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "@/lib/store";
-import { ICartItem, setQuantityCartItem } from "@/lib/features/cart/cartSlice";
+import {
+  ICartItem,
+  setQuantityCartItem,
+  removeFromCart,
+} from "@/lib/features/cart/cartSlice";
 
 function ProductRow({ cartItem }: { cartItem: ICartItem }) {
   const dispatch = useDispatch<AppDispatch>();
@@ -30,7 +34,6 @@ function ProductRow({ cartItem }: { cartItem: ICartItem }) {
   };
 
   const handleChangeQuantity = (e: ChangeEvent<HTMLInputElement>) => {
-    console.log("onchange ====");
     const newQuantity = parseInt(e.target.value, 10);
     dispatch(setQuantityCartItem({ id: cartItem.id, quantity: newQuantity }));
 
@@ -38,6 +41,10 @@ function ProductRow({ cartItem }: { cartItem: ICartItem }) {
       setQuantity(newQuantity);
       dispatch(setQuantityCartItem({ id: cartItem.id, quantity: newQuantity }));
     }
+  };
+
+  const handleRemoveCartItem = () => {
+    dispatch(removeFromCart(cartItem.id));
   };
 
   return (
@@ -78,7 +85,10 @@ function ProductRow({ cartItem }: { cartItem: ICartItem }) {
       </td>
       <td className="font-bold">{priceToal()} đ</td>
       <td>
-        <Button className="bg-red-500 text-white p-3 hover:bg-red-600">
+        <Button
+          className="bg-red-500 text-white p-3 hover:bg-red-600"
+          onClick={handleRemoveCartItem}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
