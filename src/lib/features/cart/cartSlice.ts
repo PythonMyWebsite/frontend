@@ -6,7 +6,13 @@ export interface ICartItem extends IProduct {
 }
 
 const initialState: { cart: ICartItem[] } = {
-  cart: JSON.parse(localStorage.getItem("cart") || "[]"),
+  cart: (() => {
+    try {
+      return JSON.parse(localStorage.getItem("cart") || "[]");
+    } catch (error) {
+      return [];
+    }
+  })(),
 };
 
 const cartSlice = createSlice({
